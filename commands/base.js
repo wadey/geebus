@@ -50,4 +50,21 @@ module.exports = {
       room.paste(output)
     })
   }),
+
+  "flip": function(room) {
+    room.speak(Math.random() > 0.5 ? "Heads!" : "Tails!")
+  },
+
+  "roll|dice": function(room, msg) {
+    var size = 6
+    if (msg.split[0]) {
+      size = parseInt(msg.split[0])
+      if (!size) {
+        return room.speak("That's not a valid number")
+      }
+    }
+
+    var roll = Math.floor(Math.random() * size) + 1
+    room.speak("Rolled a " + size + "-sided dice: " + roll)
+  },
 }
