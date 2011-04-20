@@ -40,6 +40,13 @@ module.exports = {
     })
   },
 
+  /**
+   * Fuck yeah nouns
+   */
+  "fuckyeah": ratelimit(60, function(room, msg) {
+    room.speak("http://fuckyeahnouns.com/images/" + encodeURIComponent(msg.full.toLowerCase()).replace(/%20/g, '+') + "#.jpg")
+  }),
+
   "fortune": ratelimit(60, function(room) {
     helpers.execSystem('fortune', function(err, output) {
       if (err) {
