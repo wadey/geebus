@@ -26,7 +26,7 @@ helpers.ratelimit = function(seconds, func) {
     var userLimit = userLimits[msg.userId]
     if (userLimit && Date.now() < userLimit) {
       return helpers.cachedUser(client, msg.userId, function(user) {
-        room.speak(user.name + ": Slow down! You can only use this command every " + seconds + " seconds." )
+        room.speak(user.name + ": Slow down! You can only use this command every " + seconds + " seconds. :cop:" )
       })
     }
 
