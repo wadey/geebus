@@ -184,7 +184,9 @@ rages['yuno'] = "Y U NO?!?-yuno.png";
 
 module.exports = {
   rage: function(room, msg) {
-    var file = rages[msg.full.trim().toLowerCase()]
+    var file = msg.split.filter(function(word) {
+      return rages[word.toLowerCase()]
+    })[0]
     if (file) {
       room.speak("http://dl.dropbox.com/u/119351/rage/img/" + encodeURIComponent(file))
     } else if (msg.full.trim().toLowerCase() === 'list') {
