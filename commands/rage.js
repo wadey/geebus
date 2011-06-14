@@ -184,11 +184,11 @@ rages['yuno'] = "Y U NO?!?-yuno.png";
 
 module.exports = {
   rage: function(room, msg) {
-    var file = msg.split.filter(function(word) {
+    var rage = msg.split.filter(function(word) {
       return rages[word.toLowerCase()]
     })[0]
-    if (file) {
-      room.speak("http://dl.dropbox.com/u/119351/rage/img/" + encodeURIComponent(file))
+    if (rage) {
+      room.speak("http://dl.dropbox.com/u/119351/rage/img/" + encodeURIComponent(rages[rage]))
     } else if (msg.full.trim().toLowerCase() === 'list') {
       room.speak("rage list: https://github.com/sagargp/trollicons/blob/"+version+"/browsers/chrome/mappings.js")
     } else {
