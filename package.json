@@ -1,0 +1,20 @@
+{
+  "author": "",
+  "name": "geebus",
+  "description": "Geebus bot",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wadey/geebus.git"
+  },
+  "engines": {
+    "node": ">=0.4.7"
+  },
+  "dependencies": {
+    "ranger": "0.2.x",
+    "request": "1.9.x",
+    "step": "0.0.x",
+    "underscore": "1.1.x"
+  },
+  "devDependencies": {}
+}
